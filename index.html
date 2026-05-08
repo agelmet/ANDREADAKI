@@ -486,14 +486,15 @@
             
             /* Mobile Hero */
             .hero {
-                /* Zoom out the background more effectively */
-                background-size: 130% auto; 
+                /* Ensures the background image only appears once and covers the whole section appropriately */
+                background-size: cover; 
+                background-repeat: no-repeat;
                 background-position: center top; 
                 background-color: var(--brand-gray);
                 height: 100vh; 
                 padding: 0 5%;
-                align-items: flex-end; /* Move content down */
-                padding-bottom: 80px; /* Space at the bottom */
+                align-items: flex-end; 
+                padding-bottom: 80px; 
             }
             .hero::before {
                 display: block; 
@@ -503,10 +504,10 @@
                 margin-left: 0; 
                 text-align: left; 
                 width: 100%;
-                margin-top: 30vh; /* Pushes content down significantly */
+                margin-top: 30vh; 
             }
             .hero-content h2, .hero-content p { 
-                font-size: 1.1rem !important; /* Made smaller as requested */
+                font-size: 1.1rem !important; 
                 font-weight: 700; 
                 font-style: normal; 
                 text-align: left;
@@ -544,7 +545,7 @@
 
             .services-section > p {
                 font-size: 1rem !important;
-                text-align: center !important; /* Centered in mobile per request */
+                text-align: center !important; 
                 line-height: 1.6;
             }
             
