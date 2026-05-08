@@ -26,6 +26,7 @@
         html, body {
             max-width: 100vw;
             overflow-x: hidden; 
+            scroll-behavior: smooth; /* Added for smooth scrolling when clicking nav links */
         }
 
         body {
@@ -630,8 +631,8 @@
             </div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="#">Η Ψυχολόγος</a>
-                    <a href="#">Υπηρεσίες</a>
+                    <a href="#about-gr">Η Ψυχολόγος</a>
+                    <a href="#services-gr">Υπηρεσίες</a>
                     <a href="#footer-gr">Επικοινωνία</a>
                 </div>
                 <div class="lang-flags">
@@ -650,7 +651,7 @@
             </div>
         </header>
 
-        <section class="about-section">
+        <section id="about-gr" class="about-section">
             <div class="desktop-about-image">
                 <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
@@ -672,7 +673,7 @@
             </div>
         </section>
 
-        <section class="services-section">
+        <section id="services-gr" class="services-section">
             <h2>Υπηρεσίες</h2>
             <p>(Όλες οι υπηρεσίες μπορούν να πραγματοποιηθούν και στην Αγγλική γλώσσα)</p>
             <div class="services-grid">
@@ -785,8 +786,8 @@
             </div>
             <div class="nav-right">
                 <div class="nav-links">
-                    <a href="#">The Psychologist</a>
-                    <a href="#">Services</a>
+                    <a href="#about-en">The Psychologist</a>
+                    <a href="#services-en">Services</a>
                     <a href="#footer-en">Contact</a>
                 </div>
                 <div class="lang-flags">
@@ -805,7 +806,7 @@
             </div>
         </header>
 
-        <section class="about-section">
+        <section id="about-en" class="about-section">
             <div class="desktop-about-image">
                 <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
@@ -828,7 +829,7 @@
             </div>
         </section>
 
-        <section class="services-section">
+        <section id="services-en" class="services-section">
             <h2>Services</h2>
             <p>(All sessions are also available in English)</p>
             <div class="services-grid">
