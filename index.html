@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoe Andreadaki - Psychologist</title>
+    <title>Γνωρίστε την Ψυχολόγο - Εξαρτησιολόγο, Ζωή Ανδρεαδάκη</title>
     <link rel="icon" type="image/jpeg" href="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
@@ -13,8 +13,7 @@
             --text-dark: #333;
             --text-light: #fff;
             --bg-light: #f5f5f5;
-            --bg-gray: #e6e6e6;
-            --bg-dark-gray: #a8a8a8;
+            --brand-gray: #acaaab; /* New requested color */
         }
 
         * {
@@ -30,11 +29,6 @@
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
         /* Navbar */
         nav {
             position: absolute;
@@ -44,7 +38,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(168, 168, 168, 0.7); /* Match the greyish header overlay */
+            background-color: var(--brand-gray);
             z-index: 100;
         }
 
@@ -57,6 +51,11 @@
             gap: 30px;
             color: var(--text-light);
             font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .nav-links a:hover {
@@ -84,7 +83,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background-image: url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1920&h=1080'); /* Placeholder since original not provided */
+            background-image: url('https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/Gemini_Generated_Image_xa7gq2xa7gq2xa7g.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -99,7 +98,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.3); /* Lighter overlay to let image show clearly */
         }
 
         .hero-content {
@@ -121,6 +120,7 @@
             display: inline-block;
             background-color: var(--primary-orange);
             color: var(--text-light);
+            text-decoration: none;
             padding: 12px 30px;
             border-radius: 30px;
             font-weight: bold;
@@ -138,7 +138,7 @@
         .about-section {
             display: flex;
             padding: 80px 10%;
-            background-color: var(--bg-gray);
+            background-color: var(--brand-gray);
             gap: 50px;
             align-items: center;
         }
@@ -150,15 +150,16 @@
         }
 
         .about-image img {
-            width: 400px;
-            height: 500px;
+            width: 350px;
+            height: 450px;
             object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 50%; /* Oval shape */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
         }
 
         .about-text-card {
-            flex: 1;
+            flex: 1.2;
             background: #fff;
             padding: 40px;
             border-radius: 15px;
@@ -223,6 +224,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
         }
 
         /* Stats Section */
@@ -233,6 +235,8 @@
             justify-content: space-around;
             padding: 40px 10%;
             text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .stat-item h3 {
@@ -252,7 +256,7 @@
             background-color: #fff;
             display: flex;
             gap: 40px;
-            align-items: stretch;
+            align-items: center;
         }
 
         .spec-text {
@@ -278,11 +282,13 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
+            align-items: center;
         }
 
         .spec-images img {
-            width: 100%;
+            width: 70%;
+            max-width: 250px;
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -290,7 +296,7 @@
 
         /* Office Hours & Location */
         .hours-section {
-            background-color: var(--bg-dark-gray);
+            background-color: var(--brand-gray);
             color: var(--text-light);
             padding: 80px 10%;
             display: flex;
@@ -300,7 +306,7 @@
 
         .map-container {
             flex: 1;
-            height: 300px;
+            height: 350px;
         }
 
         .map-container iframe {
@@ -308,6 +314,7 @@
             height: 100%;
             border: none;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .hours-text {
@@ -321,7 +328,7 @@
         }
 
         .hours-text p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-style: italic;
             margin-bottom: 15px;
         }
@@ -372,16 +379,25 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .contact-card {
-            background: rgba(168, 168, 168, 0.9);
+            background-color: var(--brand-gray);
             color: #fff;
             padding: 30px 20px;
             border-radius: 15px;
             flex: 1;
+            min-width: 250px;
             max-width: 300px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-card svg {
+            margin-bottom: 15px;
         }
 
         .contact-card h3 {
@@ -389,38 +405,50 @@
             font-size: 1.2rem;
         }
 
-        .contact-card p {
-            font-size: 0.9rem;
+        .contact-card a {
+            color: #fff;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            text-align: center;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background-color: var(--bg-dark-gray);
+            background-color: var(--brand-gray);
             color: #fff;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
         }
 
         footer img {
-            height: 60px;
-            margin-bottom: 10px;
+            height: 150px; /* Made way bigger as requested */
+            margin-bottom: 20px;
         }
 
         footer p {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 
         footer a {
+            color: #fff;
             text-decoration: underline;
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .about-section, .specialization-section, .hours-section {
                 flex-direction: column;
             }
+            .about-image {
+                justify-content: center;
+            }
             .contact-cards {
-                flex-direction: column;
                 align-items: center;
             }
             nav {
@@ -459,7 +487,7 @@
 
         <section class="about-section">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=800" alt="Zoe Andreadaki Portrait">
+                <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
             <div class="about-text-card">
                 <h2>Γνωρίστε την Ψυχολόγο <span>Εξαρτησιολόγο,</span> Ζωή Ανδρεαδάκη</h2>
@@ -527,7 +555,7 @@
 
         <section class="hours-section">
             <div class="map-container">
-                <iframe src="https://maps.google.com/maps?q=Ethnarchou%20Makariou%2022,%20Alimos%20174%2055,%20Greece&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+                <iframe src="https://maps.google.com/maps?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
             </div>
             <div class="hours-text">
                 <h2>Ωράριο Λειτουργίας</h2>
@@ -544,16 +572,21 @@
                 <h2>Επικοινωνία</h2>
                 <div class="contact-cards">
                     <div class="contact-card">
-                        <h3>📍 Διεύθυνση</h3>
-                        <p>Εθνάρχου Μακαρίου 22, Άλιμος, Αττική</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <h3>Διεύθυνση</h3>
+                        <a href="https://maps.google.com/?q=Εθνάρχου+Μακαρίου+22,+Άλιμος+174+55,+Ελλάδα" target="_blank">Εθνάρχου Μακαρίου 22, Άλιμος, Αττική</a>
                     </div>
                     <div class="contact-card">
-                        <h3>📞 Τηλέφωνο</h3>
-                        <p>213 000 8021 & 694 727 4414</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <h3>Τηλέφωνο</h3>
+                        <a href="tel:2130008021">213 000 8021</a>
+                        <span style="display:block; margin: 5px 0;">&amp;</span>
+                        <a href="tel:6947274414">694 727 4414</a>
                     </div>
                     <div class="contact-card">
-                        <h3>✉️ Email</h3>
-                        <p>zoe.andreadaki@gmail.com</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <h3>Email</h3>
+                        <a href="mailto:zoe.andreadaki@gmail.com">zoe.andreadaki@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -592,7 +625,7 @@
 
         <section class="about-section">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=800" alt="Zoe Andreadaki Portrait">
+                <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
             <div class="about-text-card">
                 <h2>Meet the Psychologist and <span>Addiction Specialist,</span> Zoe Andreadaki</h2>
@@ -663,7 +696,7 @@
 
         <section class="hours-section">
             <div class="map-container">
-                <iframe src="https://maps.google.com/maps?q=Ethnarchou%20Makariou%2022,%20Alimos%20174%2055,%20Greece&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+                <iframe src="https://maps.google.com/maps?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
             </div>
             <div class="hours-text">
                 <h2>Office Hours</h2>
@@ -681,16 +714,21 @@
                 <h2>Contact</h2>
                 <div class="contact-cards">
                     <div class="contact-card">
-                        <h3>📍 Address</h3>
-                        <p>Ethnarchou Makariou 22, Alimos, Attica</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <h3>Address</h3>
+                        <a href="https://maps.google.com/?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece" target="_blank">Ethnarchou Makariou 22, Alimos, Attica</a>
                     </div>
                     <div class="contact-card">
-                        <h3>📞 Phone</h3>
-                        <p>213 000 8021 & 694 727 4414</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <h3>Phone</h3>
+                        <a href="tel:2130008021">213 000 8021</a>
+                        <span style="display:block; margin: 5px 0;">&amp;</span>
+                        <a href="tel:6947274414">694 727 4414</a>
                     </div>
                     <div class="contact-card">
-                        <h3>✉️ Email</h3>
-                        <p>zoe.andreadaki@gmail.com</p>
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <h3>Email</h3>
+                        <a href="mailto:zoe.andreadaki@gmail.com">zoe.andreadaki@gmail.com</a>
                     </div>
                 </div>
             </div>
