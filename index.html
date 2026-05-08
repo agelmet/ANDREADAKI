@@ -13,7 +13,7 @@
             --text-dark: #333;
             --text-light: #fff;
             --bg-light: #f5f5f5;
-            --brand-gray: #acaaab; /* New requested color */
+            --brand-gray: #acaaab;
         }
 
         * {
@@ -44,6 +44,12 @@
 
         .logo img {
             height: 80px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 40px; /* Brings nav links and flags closer together */
         }
 
         .nav-links {
@@ -98,7 +104,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.3); /* Lighter overlay to let image show clearly */
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .hero-content {
@@ -150,10 +156,10 @@
         }
 
         .about-image img {
-            width: 350px;
-            height: 450px;
+            width: 420px; /* Increased size */
+            height: 520px; /* Increased size */
             object-fit: cover;
-            border-radius: 50%; /* Oval shape */
+            border-radius: 50%;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             border: 5px solid #fff;
         }
@@ -270,6 +276,8 @@
             text-align: center;
             font-size: 1.8rem;
             margin-bottom: 20px;
+            font-weight: bold; /* Bolded as requested */
+            text-decoration: underline; /* Underlined as requested */
         }
 
         .spec-text p {
@@ -287,8 +295,8 @@
         }
 
         .spec-images img {
-            width: 70%;
-            max-width: 250px;
+            width: 85%; /* Increased from 70% */
+            max-width: 350px; /* Increased from 250px */
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -427,7 +435,7 @@
         }
 
         footer img {
-            height: 150px; /* Made way bigger as requested */
+            height: 150px;
             margin-bottom: 20px;
         }
 
@@ -456,6 +464,10 @@
                 gap: 15px;
                 padding: 15px;
             }
+            .nav-right {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -466,14 +478,16 @@
             <div class="logo">
                 <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
             </div>
-            <div class="nav-links">
-                <a href="#">Η Ψυχολόγος</a>
-                <a href="#">Υπηρεσίες</a>
-                <a href="#">Επικοινωνία</a>
-            </div>
-            <div class="lang-flags">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#">Η Ψυχολόγος</a>
+                    <a href="#">Υπηρεσίες</a>
+                    <a href="#">Επικοινωνία</a>
+                </div>
+                <div class="lang-flags">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+                </div>
             </div>
         </nav>
 
@@ -490,7 +504,7 @@
                 <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
             <div class="about-text-card">
-                <h2>Γνωρίστε την Ψυχολόγο <span>Εξαρτησιολόγο,</span> Ζωή Ανδρεαδάκη</h2>
+                <h2>Γνωρίστε την <span>Ψυχολόγο Εξαρτησιολόγο,</span> Ζωή Ανδρεαδάκη</h2>
                 <p>Η Ζωή Ανδρεαδάκη είναι Ψυχολόγος – Ψυχοθεραπεύτρια - Εξαρτησιολόγος με ιδιωτικό γραφείο στον Άλιμο, εξειδικευμένη στις εξαρτήσεις και στη θεραπεία συναισθηματικών διαταραχών και διαταραχών προσωπικότητας. Διαθέτει μεταπτυχιακό στην Εξαρτησιολογία και δίπλωμα στην Κλινική Ψυχοπαθολογία από την Ιατρική Σχολή του ΕΚΠΑ και πτυχίο Ψυχολογίας από το Πάντειο Πανεπιστήμιο Κοινωνικών και Πολιτικών Επιστημών και το University of Aberdeen της Σκωτίας.</p>
                 <p>Έχει πολυετή εμπειρία στον χώρο της ψυχικής υγείας, έχοντας εργαστεί στο ΚΕΘΕΑ ως θεραπεύτρια σε κοινότητες απεξάρτησης φυλακισμένων και αποφυλακισμένων χρηστών, ενώ συνεργάστηκε με τον ΟΚΑΝΑ ως ψυχολόγος/εξαρτησιολόγος και την Κοινωφελή Δημοτική Επιχείρηση Πειραιά μέσω του Social Innovation Piraeus ως ερευνήτρια.</p>
                 <p>Από το 2010 ασκεί ιδιωτικά το επάγγελμά της, προσφέροντας ατομική και ομαδική ψυχοθεραπεία, συμβουλευτική ενηλίκων και ανηλίκων, καθώς και θεραπεία ζεύγους, οικογένειας και εξαρτήσεων. Παράλληλα, πραγματοποιεί συνεδρίες εποπτείας για επαγγελματίες ψυχικής υγείας.</p>
@@ -580,7 +594,7 @@
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         <h3>Τηλέφωνο</h3>
                         <a href="tel:2130008021">213 000 8021</a>
-                        <span style="display:block; margin: 5px 0;">&amp;</span>
+                        <span style="display:block; margin: 5px 0;">&</span>
                         <a href="tel:6947274414">694 727 4414</a>
                     </div>
                     <div class="contact-card">
@@ -604,14 +618,16 @@
             <div class="logo">
                 <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
             </div>
-            <div class="nav-links">
-                <a href="#">The Psychologist</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="lang-flags">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#">The Psychologist</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="lang-flags">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+                </div>
             </div>
         </nav>
 
@@ -628,7 +644,7 @@
                 <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
             </div>
             <div class="about-text-card">
-                <h2>Meet the Psychologist and <span>Addiction Specialist,</span> Zoe Andreadaki</h2>
+                <h2>Meet the <span>Psychologist and Addiction Specialist,</span> Zoe Andreadaki</h2>
                 <p>Zoe Andreadaki is a Psychologist – Psychotherapist – Addiction Specialist, based in Alimos, Athens. She specializes in addiction treatment, as well as in emotional and personality disorders.</p>
                 <p>She holds a Master’s degree in Addiction Studies and a Diploma in Clinical Psychopathology from the Medical School of the National and Kapodistrian University of Athens (NKUA), and a Bachelor’s degree in Psychology from Panteion University of Social and Political Sciences and the University of Aberdeen, Scotland.</p>
                 <p>She has extensive experience in the field of mental health, having worked at KETHEA, providing therapy in rehabilitation programs for incarcerated and formerly incarcerated individuals, and as a psychologist/addiction specialist with OKANA. She also collaborated with the Municipal Social Innovation Piraeus Initiative as a researcher.</p>
@@ -722,7 +738,7 @@
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         <h3>Phone</h3>
                         <a href="tel:2130008021">213 000 8021</a>
-                        <span style="display:block; margin: 5px 0;">&amp;</span>
+                        <span style="display:block; margin: 5px 0;">&</span>
                         <a href="tel:6947274414">694 727 4414</a>
                     </div>
                     <div class="contact-card">
