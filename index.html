@@ -37,26 +37,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
+            padding: 25px 12%; /* Increased padding to bring items more to the center */
             background-color: var(--brand-gray);
             z-index: 100;
         }
 
         .logo img {
-            height: 80px;
+            height: 110px; /* Made the logo bigger */
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 40px; /* Brings nav links and flags closer together */
+            gap: 40px; 
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             color: var(--text-light);
             font-weight: 500;
+            font-size: 1.15rem; /* Made nav menu items bigger */
         }
 
         .nav-links a {
@@ -70,14 +71,15 @@
 
         .lang-flags {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             cursor: pointer;
+            align-items: center;
         }
 
         .lang-flags img {
-            width: 30px;
-            height: 20px;
-            border-radius: 2px;
+            width: 45px; /* Made flags bigger */
+            height: 30px; /* Made flags bigger */
+            border-radius: 3px;
             transition: transform 0.2s;
         }
 
@@ -145,8 +147,9 @@
             display: flex;
             padding: 80px 10%;
             background-color: var(--brand-gray);
-            gap: 50px;
+            gap: 60px; /* Increased gap */
             align-items: center;
+            justify-content: center;
         }
 
         .about-image {
@@ -156,8 +159,8 @@
         }
 
         .about-image img {
-            width: 420px; /* Increased size */
-            height: 520px; /* Increased size */
+            width: 420px;
+            height: 520px;
             object-fit: cover;
             border-radius: 50%;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -165,9 +168,9 @@
         }
 
         .about-text-card {
-            flex: 1.2;
+            flex: 0 1 450px; /* Limits horizontal width, makes it more vertical */
             background: #fff;
-            padding: 40px;
+            padding: 50px 40px; /* Adjust padding for taller shape */
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             text-align: center;
@@ -276,8 +279,8 @@
             text-align: center;
             font-size: 1.8rem;
             margin-bottom: 20px;
-            font-weight: bold; /* Bolded as requested */
-            text-decoration: underline; /* Underlined as requested */
+            font-weight: bold; 
+            text-decoration: underline; 
         }
 
         .spec-text p {
@@ -295,8 +298,8 @@
         }
 
         .spec-images img {
-            width: 85%; /* Increased from 70% */
-            max-width: 350px; /* Increased from 250px */
+            width: 85%;
+            max-width: 350px; 
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -357,7 +360,7 @@
             background-image: url('https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/2025-10-21.jpg');
             background-size: cover;
             background-position: center;
-            padding: 100px 10%;
+            padding: 140px 10%; /* Increased padding */
             text-align: center;
         }
 
@@ -380,12 +383,12 @@
             font-size: 2.5rem;
             color: #fff;
             text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-            margin-bottom: 40px;
+            margin-bottom: 50px; /* Increased margin */
         }
 
         .contact-cards {
             display: flex;
-            gap: 20px;
+            gap: 30px; /* Increased gap between cards */
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -393,11 +396,11 @@
         .contact-card {
             background-color: var(--brand-gray);
             color: #fff;
-            padding: 30px 20px;
+            padding: 40px 20px; /* Increased padding */
             border-radius: 15px;
             flex: 1;
             min-width: 250px;
-            max-width: 300px;
+            max-width: 380px; /* Increased max width to allow single line phone */
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             display: flex;
             flex-direction: column;
@@ -410,12 +413,12 @@
 
         .contact-card h3 {
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .contact-card a {
             color: #fff;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-decoration: none;
             transition: opacity 0.2s;
             text-align: center;
@@ -424,6 +427,10 @@
         .contact-card a:hover {
             opacity: 0.8;
             text-decoration: underline;
+        }
+
+        .single-line {
+            white-space: nowrap; /* Ensures items stay on the same line */
         }
 
         /* Footer */
@@ -435,7 +442,7 @@
         }
 
         footer img {
-            height: 150px;
+            height: 190px; /* Made the footer logo a bit bigger */
             margin-bottom: 20px;
         }
 
@@ -450,6 +457,9 @@
 
         /* Responsive */
         @media (max-width: 1000px) {
+            nav {
+                padding: 15px 5%;
+            }
             .about-section, .specialization-section, .hours-section {
                 flex-direction: column;
             }
@@ -462,11 +472,13 @@
             nav {
                 flex-direction: column;
                 gap: 15px;
-                padding: 15px;
             }
             .nav-right {
                 flex-direction: column;
                 gap: 15px;
+            }
+            .single-line {
+                white-space: normal; /* Allow wrapping on small screens if necessary */
             }
         }
     </style>
@@ -593,9 +605,9 @@
                     <div class="contact-card">
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         <h3>Τηλέφωνο</h3>
-                        <a href="tel:2130008021">213 000 8021</a>
-                        <span style="display:block; margin: 5px 0;">&</span>
-                        <a href="tel:6947274414">694 727 4414</a>
+                        <div class="single-line">
+                            <a href="tel:2130008021">213 000 8021</a> &amp; <a href="tel:6947274414">694 727 4414</a>
+                        </div>
                     </div>
                     <div class="contact-card">
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -737,9 +749,9 @@
                     <div class="contact-card">
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                         <h3>Phone</h3>
-                        <a href="tel:2130008021">213 000 8021</a>
-                        <span style="display:block; margin: 5px 0;">&</span>
-                        <a href="tel:6947274414">694 727 4414</a>
+                        <div class="single-line">
+                            <a href="tel:2130008021">213 000 8021</a> &amp; <a href="tel:6947274414">694 727 4414</a>
+                        </div>
                     </div>
                     <div class="contact-card">
                         <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
