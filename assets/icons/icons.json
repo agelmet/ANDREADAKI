@@ -1,0 +1,16 @@
+{
+ "source": {
+  "kind": "file",
+  "ref": "assets/img/zoi-andreadaki-logo.svg"
+ },
+ "source_md5": "5150706f6a001a106fbc07b01822eb1c",
+ "version": "4c9230b6",
+ "tile": null,
+ "crop": null,
+ "header": [
+  "inline",
+  "index.html",
+  "1ff648f206a814a9718f2f5ff787c791"
+ ],
+ "made": "2026-10-17"
+}

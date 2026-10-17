@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index.backup
+
+Sitemap: https://zoetherapy.gr/sitemap.xml

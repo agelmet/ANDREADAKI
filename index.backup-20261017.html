@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Γνωρίστε την Ψυχολόγο - Εξαρτησιολόγο, Ζωή Ανδρεαδάκη</title>
+    <link rel="icon" type="image/jpeg" href="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+        :root {
+            --primary-orange: #d94e18;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f5f5f5;
+            --brand-gray: #acaaab;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden; 
+            scroll-behavior: smooth; /* Added for smooth scrolling when clicking nav links */
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 12%; 
+            background-color: var(--brand-gray);
+            z-index: 100;
+        }
+
+        .logo img {
+            height: 110px; 
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 40px; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.15rem; 
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .lang-flags {
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .lang-flags img {
+            width: 45px; 
+            height: 30px; 
+            border-radius: 3px;
+            transition: transform 0.2s;
+        }
+
+        .lang-flags img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/Gemini_Generated_Image_xa7gq2xa7gq2xa7g.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 5%; 
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+            color: var(--text-light);
+            z-index: 10;
+            margin-left: 3%; 
+        }
+
+        .hero-content h2, .hero-content p {
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-orange);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #bf4111;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            padding: 80px 10%;
+            background-color: var(--brand-gray);
+            gap: 60px; 
+            align-items: center;
+            justify-content: center; 
+        }
+
+        .mobile-title, .mobile-about-image {
+            display: none; 
+        }
+
+        .desktop-about-image {
+            flex: 0 1 auto;
+            display: flex;
+            justify-content: center; 
+        }
+
+        .desktop-about-image img {
+            width: 420px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 5px solid #fff;
+        }
+
+        .about-text-card {
+            flex: 0 1 650px; 
+            background: #fff;
+            padding: 40px; 
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .about-text-card h2, .mobile-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text-card h2 span, .mobile-title h2 span {
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        .about-text-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 10%;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: #888;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .services-section > p {
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .service-pill {
+            background-color: #f9f9f9;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-style: italic;
+            color: #777;
+            flex: 1 1 300px;
+            max-width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary-orange);
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 10%;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Specialization Section */
+        .specialization-section {
+            padding: 80px 10%;
+            background-color: #fff;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .spec-text {
+            flex: 1.5;
+            border: 2px solid #888;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .spec-text h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: bold; 
+            text-decoration: underline; 
+        }
+
+        .spec-text p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .mobile-spec-image, .mobile-spec-image-2 {
+            display: none;
+        }
+
+        .spec-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .spec-images img {
+            width: 85%;
+            max-width: 350px; 
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Office Hours & Location */
+        .hours-section {
+            background-color: var(--brand-gray);
+            color: var(--text-light);
+            padding: 80px 10%;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .map-container {
+            flex: 1;
+            height: 350px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .hours-text {
+            flex: 1;
+        }
+
+        .hours-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .hours-text p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .hours-image {
+            flex: 1;
+        }
+
+        .hours-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            position: relative;
+            background-image: url('https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/2025-10-21.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 10%; 
+            text-align: center;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            margin-bottom: 50px; 
+        }
+
+        .contact-cards {
+            display: flex;
+            gap: 30px; 
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background-color: var(--brand-gray);
+            color: #fff;
+            padding: 40px 20px; 
+            border-radius: 15px;
+            flex: 1;
+            min-width: 250px;
+            max-width: 380px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-card svg {
+            margin-bottom: 15px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-card a {
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            text-align: center;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .single-line {
+            white-space: nowrap; 
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--brand-gray);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        footer img {
+            height: 190px; 
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1000px) {
+            nav {
+                padding: 15px 5%;
+            }
+            .nav-links {
+                display: none; 
+            }
+            .nav-right {
+                gap: 0;
+            }
+            .logo img {
+                height: 80px; 
+            }
+            
+            /* Mobile Hero */
+            .hero {
+                /* Ensures the background image only appears once and covers the whole section appropriately */
+                background-size: cover; 
+                background-repeat: no-repeat;
+                background-position: center top; 
+                background-color: var(--brand-gray);
+                height: 100vh; 
+                padding: 0 5%;
+                align-items: flex-end; 
+                padding-bottom: 80px; 
+            }
+            .hero::before {
+                display: block; 
+                background: rgba(255, 255, 255, 0.25); 
+            }
+            .hero-content {
+                margin-left: 0; 
+                text-align: left; 
+                width: 100%;
+                margin-top: 30vh; 
+            }
+            .hero-content h2, .hero-content p { 
+                font-size: 1.1rem !important; 
+                font-weight: 700; 
+                font-style: normal; 
+                text-align: left;
+                margin-bottom: 15px;
+            }
+            .hero-content .btn {
+                float: left; 
+                margin-left: 0;
+            }
+
+            .about-section {
+                flex-direction: column;
+                padding: 50px 5%;
+                gap: 30px;
+            }
+            
+            /* Mobile Titles Consistency */
+            .mobile-title h2, 
+            .services-section h2, 
+            .spec-text h2, 
+            .hours-text h2, 
+            .contact-content h2 { 
+                font-size: 1.5rem !important; 
+                text-align: center;
+            }
+
+            /* Mobile Body Text Consistency */
+            .about-text-card p, 
+            .spec-text p, 
+            .hours-text p {
+                font-size: 1rem !important; 
+                text-align: left; 
+                line-height: 1.6;
+            }
+
+            .services-section > p {
+                font-size: 1rem !important;
+                text-align: center !important; 
+                line-height: 1.6;
+            }
+            
+            /* White border container handles everything inside */
+            .desktop-about-image { display: none; }
+            .desktop-title { display: none; }
+            .mobile-title { display: block; }
+            
+            .mobile-about-image {
+                display: flex;
+                justify-content: center;
+                margin: 25px 0;
+            }
+            .mobile-about-image img {
+                width: 100%;
+                max-width: 320px; 
+                height: auto;
+                aspect-ratio: 420 / 520;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .about-text-card {
+                padding: 30px 20px; 
+            }
+
+            .specialization-section, .hours-section {
+                flex-direction: column;
+                padding: 50px 5%;
+            }
+
+            /* Mobile Specialization Images */
+            .desktop-spec-image, .desktop-spec-image-2 { display: none; }
+            .mobile-spec-image { 
+                display: block; 
+                width: 100%; 
+                border-radius: 10px; 
+                margin: 20px 0; 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            }
+            .mobile-spec-image-2 {
+                display: block; 
+                width: 100%; 
+                border-radius: 10px; 
+                margin-top: 20px; 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            }
+
+            /* Stats stack vertically one after another */
+            .stats-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            .stat-item {
+                width: 100%;
+            }
+
+            .contact-cards {
+                align-items: center;
+                flex-direction: column;
+            }
+            .single-line {
+                white-space: normal; 
+            }
+            
+            /* Other specific sizes */
+            .stat-item h3 { font-size: 2rem; }
+            .stat-item p { font-size: 0.9rem; }
+            .service-pill { padding: 15px 20px; font-size: 0.9rem; }
+            .contact-card h3 { font-size: 1.2rem; }
+            .contact-card a { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content-gr">
+        <nav>
+            <div class="logo">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#about-gr">Η Ψυχολόγος</a>
+                    <a href="#services-gr">Υπηρεσίες</a>
+                    <a href="#footer-gr">Επικοινωνία</a>
+                </div>
+                <div class="lang-flags">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-content">
+                <h2>Το γραφείο της ψυχολόγου Ζωής Ανδρεαδάκη αποτελεί ένα ήρεμο καταφύγιο για όσους επιθυμούν να συνδεθούν με τον εαυτό τους.</h2>
+                <p>Εδώ, η φροντίδα, η αποδοχή και η επιστημονική προσέγγιση συνδυάζονται, προσφέροντας στήριξη σε κάθε άνθρωπο που αναζητά ισορροπία και μια ικανοποιημένη ζωή.</p>
+                <a href="#footer-gr" class="btn">Κλείστε Ραντεβού Τώρα</a>
+                <div style="clear: both;"></div>
+            </div>
+        </header>
+
+        <section id="about-gr" class="about-section">
+            <div class="desktop-about-image">
+                <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
+            </div>
+            <div class="about-text-card">
+                <h2 class="desktop-title">Γνωρίστε την <span>Ψυχολόγο Εξαρτησιολόγο,</span> Ζωή Ανδρεαδάκη</h2>
+                
+                <div class="mobile-title">
+                    <h2>Γνωρίστε την <span>Ψυχολόγο Εξαρτησιολόγο,</span> Ζωή Ανδρεαδάκη</h2>
+                </div>
+                
+                <div class="mobile-about-image">
+                    <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
+                </div>
+
+                <p>Η Ζωή Ανδρεαδάκη είναι Ψυχολόγος – Ψυχοθεραπεύτρια - Εξαρτησιολόγος με ιδιωτικό γραφείο στον Άλιμο, εξειδικευμένη στις εξαρτήσεις και στη θεραπεία συναισθηματικών διαταραχών και διαταραχών προσωπικότητας. Διαθέτει μεταπτυχιακό στην Εξαρτησιολογία και δίπλωμα στην Κλινική Ψυχοπαθολογία από την Ιατρική Σχολή του ΕΚΠΑ και πτυχίο Ψυχολογίας από το Πάντειο Πανεπιστήμιο Κοινωνικών και Πολιτικών Επιστημών και το University of Aberdeen της Σκωτίας.</p>
+                <p>Έχει πολυετή εμπειρία στον χώρο της ψυχικής υγείας, έχοντας εργαστεί στο ΚΕΘΕΑ ως θεραπεύτρια σε κοινότητες απεξάρτησης φυλακισμένων και αποφυλακισμένων χρηστών, ενώ συνεργάστηκε με τον ΟΚΑΝΑ ως ψυχολόγος/εξαρτησιολόγος και την Κοινωφελή Δημοτική Επιχείρηση Πειραιά μέσω του Social Innovation Piraeus ως ερευνήτρια.</p>
+                <p>Από το 2010 ασκεί ιδιωτικά το επάγγελμά της, προσφέροντας ατομική και ομαδική ψυχοθεραπεία, συμβουλευτική ενηλίκων και ανηλίκων, καθώς και θεραπεία ζεύγους, οικογένειας και εξαρτήσεων. Παράλληλα, πραγματοποιεί συνεδρίες εποπτείας για επαγγελματίες ψυχικής υγείας.</p>
+                <p>Με βαθιά κατανόηση, επιστημονική κατάρτιση και συνεχή επιμόρφωση, η Ζωή Ανδρεαδάκη στηρίζει κάθε θεραπευόμενο με σεβασμό και ενσυναίσθηση, συμβάλλοντας ουσιαστικά στη βελτίωση της ψυχικής του υγείας και της ποιότητας ζωής του.</p>
+            </div>
+        </section>
+
+        <section id="services-gr" class="services-section">
+            <h2>Υπηρεσίες</h2>
+            <p>(Όλες οι υπηρεσίες μπορούν να πραγματοποιηθούν και στην Αγγλική γλώσσα)</p>
+            <div class="services-grid">
+                <div class="service-pill">Ατομικές και ομαδικές συνεδρίες ενηλίκων</div>
+                <div class="service-pill">Αντιμετώπιση και θεραπεία εξαρτήσεων</div>
+                <div class="service-pill">Διαχείριση διαταραχών προσωπικότητας</div>
+                <div class="service-pill">Αντιμετώπιση διατροφικών διαταραχών</div>
+                <div class="service-pill">Θεραπεία ζεύγους</div>
+                <div class="service-pill">Συμβουλευτική γονέων</div>
+                <div class="service-pill">Θεραπεία κατάθλιψης και συναισθηματικών διαταραχών</div>
+                <div class="service-pill">Συμβουλευτική διαχείρισης άγχους και κρίσεων πανικού</div>
+                <div class="service-pill">Αντιμετώπιση ψυχοσωματικών διαταραχών</div>
+                <div class="service-pill">Ατομικές συνεδρίες εφήβων</div>
+                <div class="service-pill">Υποστήριξη ΛΟΑΤΚΙ και ευάλωτων κοινωνικών ομάδων</div>
+                <div class="service-pill">Χορήγηση MMPI – Πολυδιάστατο ερωτηματολόγιο προσωπικότητας</div>
+                <div class="service-pill">Εποπτεία</div>
+                <div class="service-pill">Ειδικό κόστος για ΑΜΕΑ – ανέργους – φοιτητές</div>
+                <div class="service-pill">Συνεδρίες μέσω βιντεοκλήσης</div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>ΧΡΟΝΙΑ ΕΜΠΕΙΡΙΑΣ</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>ΔΙΑΦΟΡΕΤΙΚΕΣ ΥΠΗΡΕΣΙΕΣ</p>
+            </div>
+            <div class="stat-item">
+                <h3>400+</h3>
+                <p>ΕΥΧΑΡΙΣΤΗΜΕΝΟΙ ΠΕΛΑΤΕΣ</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>ΕΞΑΤΟΜΙΚΕΥΜΕΝΗ ΦΡΟΝΤΙΔΑ</p>
+            </div>
+        </section>
+
+        <section class="specialization-section">
+            <div class="spec-text">
+                <h2>Ειδίκευση ως Εξαρτησιολόγος</h2>
+                <p>Η ειδικότητα της εξαρτησιολογίας ασχολείται με την πρόληψη, τη διάγνωση και τη θεραπευτική αντιμετώπιση των εξαρτήσεων — είτε αυτές αφορούν ουσίες (όπως το αλκοόλ, τα ναρκωτικά ή τα φάρμακα), είτε συμπεριφορές (όπως ο τζόγος, το διαδίκτυο, τα μέσα κοινωνικής δικτύωσης ή οι εμμονικές σχέσεις). Ως εξαρτησιολόγος, η Ζωή Ανδρεαδάκη διαθέτει εξειδικευμένη εκπαίδευση και εμπειρία στην κατανόηση των μηχανισμών που οδηγούν έναν άνθρωπο στην εξάρτηση, αλλά και των ψυχολογικών, κοινωνικών και βιολογικών παραγόντων που τη συντηρούν.</p>
+                
+                <img class="mobile-spec-image" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b8c1d107042f9e672.png" alt="Heal Break Free Live">
+
+                <p>Η προσέγγισή της είναι ολιστική και βασίζεται στη βαθιά κατανόηση ότι η εξάρτηση δεν είναι απλώς μια “κακή συνήθεια”, αλλά μια πολύπλοκη ψυχολογική κατάσταση που συχνά συνδέεται με εσωτερικό πόνο, άγχος, τραύμα ή συναισθηματικά κενά. Μέσα από την ψυχοθεραπευτική διαδικασία, η κα Ανδρεαδάκη βοηθά το άτομο να αναγνωρίσει τις βαθύτερες αιτίες της συμπεριφοράς του, να αναπτύξει μηχανισμούς αυτορρύθμισης και να ξαναχτίσει τη σχέση του με τον εαυτό του και τους άλλους.</p>
+                <p>Παράλληλα, δίνει έμφαση στη στήριξη των οικογενειών, καθώς η εξάρτηση δεν επηρεάζει μόνο το άτομο, αλλά και το ευρύτερο περιβάλλον του. Μέσα από καθοδήγηση και συμβουλευτική, βοηθά τα μέλη της οικογένειας να κατανοήσουν τη φύση της εξάρτησης, να διαχειριστούν το άγχος και την ενοχή και να συμβάλουν αποτελεσματικά στην πορεία ανάρρωσης του αγαπημένου τους προσώπου.</p>
+                <p>Η δουλειά της ως εξαρτησιολόγος δεν περιορίζεται στην “απεξάρτηση”, αλλά στοχεύει στη συνολική ενδυνάμωση του ατόμου — στη δημιουργία μιας νέας ζωής με νόημα, στόχο και εσωτερική ισορροπία. Η Ζωή Ανδρεαδάκη συνοδεύει τον θεραπευόμενο με ενσυναίσθηση, σταθερότητα και ειλικρίνεια σε κάθε στάδιο αυτής της διαδρομής, βοηθώντας τον να ξαναβρεί τον έλεγχο και την ελευθερία του.</p>
+                
+                <img class="mobile-spec-image-2" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b9c717748d8b91a13.png" alt="Addiction">
+            </div>
+            <div class="spec-images">
+                <img class="desktop-spec-image" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b8c1d107042f9e672.png" alt="Heal Break Free Live">
+                <img class="desktop-spec-image-2" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b9c717748d8b91a13.png" alt="Addiction">
+            </div>
+        </section>
+
+        <section class="hours-section">
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <div class="hours-text">
+                <h2>Ωράριο Λειτουργίας</h2>
+                <p>Από Δευτέρα έως Σάββατο, κατόπιν ραντεβού, η κα Ανδρεαδάκη υποδέχεται με σεβασμό και κατανόηση όσους αναζητούν τον εαυτό και τους τρόπους να διαχειριστούν τα συναισθήματα, τις σχέσεις ή τις εσωτερικές συγκρούσεις τους.</p>
+                <p>Η προσέγγισή της είναι ανθρώπινη και πρακτική — με στόχο τη σταδιακή επαναφορά της ψυχικής ισορροπίας και της ικανοποιημένης ζωής</p>
+            </div>
+            <div class="hours-image">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68f7793784a9d6673d5b57ae.jpeg" alt="Therapy Room Armchair">
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-content">
+                <h2>Επικοινωνία</h2>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <h3>Διεύθυνση</h3>
+                        <a href="https://maps.google.com/?q=Εθνάρχου+Μακαρίου+22,+Άλιμος+174+55,+Ελλάδα" target="_blank">Εθνάρχου Μακαρίου 22, Άλιμος, Αττική</a>
+                    </div>
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <h3>Τηλέφωνο</h3>
+                        <div class="single-line">
+                            <a href="tel:2130008021">213 000 8021</a> & <a href="tel:6947274414">694 727 4414</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <h3>Email</h3>
+                        <a href="mailto:zoe.andreadaki@gmail.com">zoe.andreadaki@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer-gr">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
+            <p>Copyright 2025 by Andreadaki Zoe designed by <a href="https://advonmedia.com" target="_blank">Advon Media</a>. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+    <div id="content-en" style="display: none;">
+        <nav>
+            <div class="logo">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#about-en">The Psychologist</a>
+                    <a href="#services-en">Services</a>
+                    <a href="#footer-en">Contact</a>
+                </div>
+                <div class="lang-flags">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg" alt="Greek" onclick="setLanguage('gr')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" onclick="setLanguage('en')">
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-content">
+                <h2>The office of psychologist Zoe Andreadaki is a calm and welcoming space for anyone seeking to reconnect with themselves.</h2>
+                <p>Here, care, acceptance, and scientific expertise come together to provide support to every person striving for balance and a more fulfilling life.</p>
+                <a href="#footer-en" class="btn">Book Your Appointment Today</a>
+                <div style="clear: both;"></div>
+            </div>
+        </header>
+
+        <section id="about-en" class="about-section">
+            <div class="desktop-about-image">
+                <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
+            </div>
+            <div class="about-text-card">
+                <h2 class="desktop-title">Meet the <span>Psychologist and Addiction Specialist,</span> Zoe Andreadaki</h2>
+                
+                <div class="mobile-title">
+                    <h2>Meet the <span>Psychologist and Addiction Specialist,</span> Zoe Andreadaki</h2>
+                </div>
+                
+                <div class="mobile-about-image">
+                    <img src="https://raw.githubusercontent.com/agelmet/ANDREADAKI/refs/heads/main/zeoand.jpg" alt="Zoe Andreadaki Portrait">
+                </div>
+
+                <p>Zoe Andreadaki is a Psychologist – Psychotherapist – Addiction Specialist, based in Alimos, Athens. She specializes in addiction treatment, as well as in emotional and personality disorders.</p>
+                <p>She holds a Master’s degree in Addiction Studies and a Diploma in Clinical Psychopathology from the Medical School of the National and Kapodistrian University of Athens (NKUA), and a Bachelor’s degree in Psychology from Panteion University of Social and Political Sciences and the University of Aberdeen, Scotland.</p>
+                <p>She has extensive experience in the field of mental health, having worked at KETHEA, providing therapy in rehabilitation programs for incarcerated and formerly incarcerated individuals, and as a psychologist/addiction specialist with OKANA. She also collaborated with the Municipal Social Innovation Piraeus Initiative as a researcher.</p>
+                <p>Since 2010, she has maintained a private practice, offering individual and group psychotherapy, counseling for adults and minors, and couples, family, and addiction therapy. She also provides supervision sessions for mental health professionals.</p>
+                <p>With deep understanding, professional training, and ongoing education, Zoe Andreadaki supports each client with empathy and respect, fostering genuine personal growth and improved emotional well-being.</p>
+            </div>
+        </section>
+
+        <section id="services-en" class="services-section">
+            <h2>Services</h2>
+            <p>(All sessions are also available in English)</p>
+            <div class="services-grid">
+                <div class="service-pill">Individual and group therapy for adults</div>
+                <div class="service-pill">Treatment and counseling for addictions</div>
+                <div class="service-pill">Personality disorders treatment</div>
+                <div class="service-pill">Treatment for eating disorders</div>
+                <div class="service-pill">Couples therapy</div>
+                <div class="service-pill">Parental counseling</div>
+                <div class="service-pill">Therapy for depression and emotional disorders</div>
+                <div class="service-pill">Stress management and panic attack counseling</div>
+                <div class="service-pill">Treatment of psychosomatic conditions</div>
+                <div class="service-pill">Individual therapy for adolescents</div>
+                <div class="service-pill">Support for LGBTQI+ individuals and vulnerable groups</div>
+                <div class="service-pill">Administration of the MMPI – Minnesota Multiphasic Personality Inventory</div>
+                <div class="service-pill">Professional supervision</div>
+                <div class="service-pill">Special rates for students, unemployed individuals, and people with disabilities</div>
+                <div class="service-pill">Online video sessions</div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>YEARS OF EXPERIENCE</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>DIFFERENT SERVICES</p>
+            </div>
+            <div class="stat-item">
+                <h3>400+</h3>
+                <p>SATISFIED CLIENTS</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>PERSONALIZED CARE</p>
+            </div>
+        </section>
+
+        <section class="specialization-section">
+            <div class="spec-text">
+                <h2>Specialization in Addiction Treatment</h2>
+                <p>The field of Addiction Studies focuses on the prevention, diagnosis, and treatment of addictions — whether related to substances (such as alcohol, drugs, or medication) or behaviors (such as gambling, internet use, social media, or compulsive relationships).</p>
+                
+                <img class="mobile-spec-image" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b8c1d107042f9e672.png" alt="Heal Break Free Live">
+
+                <p>As an addiction specialist, Zoe Andreadaki has advanced training and experience in understanding the psychological, social, and biological mechanisms that contribute to addictive behavior.</p>
+                <p>Her approach is holistic, recognizing that addiction is not simply a “bad habit” but a complex psychological condition often rooted in inner pain, anxiety, trauma, or emotional emptiness. Through psychotherapy, she helps individuals identify the deeper causes of their behavior, develop self-regulation skills, and rebuild a healthier relationship with themselves and others.</p>
+                <p>She also emphasizes family support, understanding that addiction affects not only the individual but the entire family system. Through guidance and counseling, she helps family members understand the nature of addiction, manage stress and guilt, and effectively support their loved one’s recovery.</p>
+                <p>Her work goes beyond detoxification, focusing instead on the person’s overall empowerment — helping them create a life of meaning, purpose, and emotional balance.</p>
+                <p>With empathy, steadiness, and authenticity, Zoe Andreadaki walks alongside each client on their path toward healing, helping them regain control and freedom in their lives.</p>
+                
+                <img class="mobile-spec-image-2" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b9c717748d8b91a13.png" alt="Addiction">
+            </div>
+            <div class="spec-images">
+                <img class="desktop-spec-image" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b8c1d107042f9e672.png" alt="Heal Break Free Live">
+                <img class="desktop-spec-image-2" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68ed063b9c717748d8b91a13.png" alt="Addiction">
+            </div>
+        </section>
+
+        <section class="hours-section">
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <div class="hours-text">
+                <h2>Office Hours</h2>
+                <p>Monday to Saturday, by appointment.</p>
+                <p>Ms. Andreadaki welcomes each client with respect and understanding, offering a space for self-exploration and emotional healing.</p>
+                <p>Her approach is human and practical, aiming to restore inner balance and support a more satisfying, meaningful life.</p>
+            </div>
+            <div class="hours-image">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68f7793784a9d6673d5b57ae.jpeg" alt="Therapy Room Armchair">
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-content">
+                <h2>Contact</h2>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <h3>Address</h3>
+                        <a href="https://maps.google.com/?q=Ethnarchou+Makariou+22,+Alimos+174+55,+Greece" target="_blank">Ethnarchou Makariou 22, Alimos, Attica</a>
+                    </div>
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <h3>Phone</h3>
+                        <div class="single-line">
+                            <a href="tel:2130008021">213 000 8021</a> & <a href="tel:6947274414">694 727 4414</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <svg fill="#ffffff" viewBox="0 0 24 24" width="35px" height="35px"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <h3>Email</h3>
+                        <a href="mailto:zoe.andreadaki@gmail.com">zoe.andreadaki@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer-en">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/68e3b7f06a0a9111397274f4.jpeg" alt="Zoe Andreadaki Logo">
+            <p>Copyright 2025 by Andreadaki Zoe designed by <a href="https://advonmedia.com" target="_blank">Advon Media</a>. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                document.getElementById('content-gr').style.display = 'none';
+                document.getElementById('content-en').style.display = 'block';
+            } else {
+                document.getElementById('content-en').style.display = 'none';
+                document.getElementById('content-gr').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
