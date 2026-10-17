@@ -339,12 +339,9 @@ section{position:relative;isolation:isolate;overflow:clip}
 
 /* ===== ADDICTION (dark) ===== */
 .spec{padding:150px 0}
-.sp-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(40px,6vw,96px);align-items:start}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 34px}
-.tags li{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;color:var(--acc-l);box-shadow:inset 0 0 0 1px rgba(242,134,74,.35);background:rgba(242,134,74,.06)}
-.js .tags li{opacity:0;transform:translateY(10px) scale(.9)}
-.js .tags.in li{opacity:1;transform:none;transition:opacity .5s,transform .6s var(--spring)}
-.tags.in li:nth-child(2){transition-delay:.06s}.tags.in li:nth-child(3){transition-delay:.12s}.tags.in li:nth-child(4){transition-delay:.18s}.tags.in li:nth-child(5){transition-delay:.24s}.tags.in li:nth-child(6){transition-delay:.3s}.tags.in li:nth-child(7){transition-delay:.36s}
+.sp-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:"hd gx" "t gx";column-gap:clamp(40px,6vw,96px);align-items:start}
+.sp-hd{grid-area:hd;margin-bottom:34px}.sp-t{grid-area:t}
+.sp-gx{grid-area:gx;position:sticky;top:96px;display:flex;flex-direction:column;gap:6px}
 .sp-p{color:rgba(245,240,232,.8);font-size:18px}
 .sp-p p+p{margin-top:20px}
 .sp-p p:first-child{font:300 clamp(21px,1.9vw,26px)/1.5 var(--fd);color:var(--paper)}
@@ -355,18 +352,57 @@ section{position:relative;isolation:isolate;overflow:clip}
 .js .sp-p p:not(:first-child){opacity:0;transform:translateY(18px)}
 .js .sp-p p.in{opacity:1;transform:none;transition:opacity .8s,transform .9s var(--ease)}
 .spec .btn{margin-top:40px}
-.sp-ph{position:sticky;top:120px}
-.posters{position:relative;height:clamp(420px,46vw,620px);perspective:1200px}
-.poster{position:absolute;width:74%;aspect-ratio:1;border-radius:18px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.06);cursor:zoom-in;transition:transform .9s var(--spring),box-shadow .5s}
-.poster img{width:100%;height:100%;object-fit:contain;background:#141110}
-.p1{left:0;top:0;transform:rotate(-5deg) translateZ(0);z-index:2}
-.p2{right:0;bottom:0;transform:rotate(4deg)}
-.js .poster{opacity:0}
-.js .posters.in .poster{opacity:1;transition:opacity .8s,transform 1.2s var(--spring)}
-.js .posters:not(.in) .p1{transform:translate(-40px,60px) rotate(-18deg)}
-.js .posters:not(.in) .p2{transform:translate(40px,80px) rotate(16deg)}
-.posters.in .p2{transition-delay:.15s}
-@media (hover:hover){.poster:hover{z-index:3;transform:rotate(0) scale(1.04)!important;box-shadow:0 50px 90px -30px rgba(210,74,18,.6)}}
+/* addiction graphics — blended into the band, no boxes */
+.sgx{position:relative;margin:0}
+.net{aspect-ratio:520/472;width:100%}
+.net-s,.ch-s{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.orb1{fill:none;stroke:rgba(245,240,232,.1);stroke-width:1;stroke-dasharray:2 9;transform-box:fill-box;transform-origin:center;animation:orbr 70s linear infinite}
+.orb2{fill:none;stroke:rgba(242,134,74,.22);stroke-width:1;transform-box:fill-box;transform-origin:center;animation:orbr 50s linear infinite reverse;stroke-dasharray:60 14}
+@keyframes orbr{to{transform:rotate(360deg)}}
+.gl{fill:none;stroke:rgba(242,134,74,.5);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke .3s,stroke-width .3s}
+.net.in .gl{stroke-dashoffset:0;transition:stroke-dashoffset 1.1s var(--ease) calc(var(--i)*.11s + .35s),stroke .3s,stroke-width .3s}
+.glow{transform-box:fill-box;transform-origin:center;opacity:.85;animation:glw 5s ease-in-out infinite}
+@keyframes glw{50%{transform:scale(1.14);opacity:1}}
+.crack path{fill:none;stroke:#FFE6CF;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:.5}
+.net.in .crack path{stroke-dashoffset:0;transition:stroke-dashoffset .5s ease-out calc(var(--k)*.05s + .1s)}
+.gd{fill:#F2864A;transform-box:fill-box;transform-origin:center;transform:scale(0)}
+.net.in .gd{transform:scale(1);transition:transform .5s var(--spring) calc(var(--i)*.11s + 1s)}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:9px 18px;border-radius:999px;background:rgba(23,20,18,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);box-shadow:0 0 0 1px rgba(242,134,74,.55),0 0 40px rgba(242,134,74,.45);font:300 italic clamp(22px,2vw,28px)/1 var(--fd);color:#FFF4EA;pointer-events:none;white-space:nowrap}
+.grp{position:absolute;top:1%;font:600 11.5px/1 var(--fb);letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.5)}
+.grp.g1{left:4%}.grp.g2{right:4%}
+.grp::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.grp.g1::before{background:var(--acc-l)}.grp.g2::before{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(245,240,232,.75)}
+.pills{position:absolute;inset:0;pointer-events:none}
+.gp{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);pointer-events:auto;padding:8px 15px;border-radius:999px;font:600 14px/1.25 var(--fb);color:var(--paper);white-space:nowrap;cursor:default;
+ background:rgba(23,20,18,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:inset 0 0 0 1px rgba(242,134,74,.5),0 10px 24px -12px rgba(0,0,0,.8);transition:background .3s,box-shadow .3s,transform .45s var(--spring)}
+.gp.beh{box-shadow:inset 0 0 0 1px rgba(245,240,232,.38),0 10px 24px -12px rgba(0,0,0,.8)}
+.js .gp{opacity:0;transform:translate(-50%,-50%) scale(.55)}
+.js .net.in .gp{opacity:1;transform:translate(-50%,-50%);transition:opacity .5s calc(var(--i)*.11s + .9s),transform .7s var(--spring) calc(var(--i)*.11s + .9s),background .3s,box-shadow .3s}
+.gp.on{background:var(--acc);box-shadow:0 14px 30px -10px rgba(210,74,18,.9)}
+.js .net.in .gp.on{transform:translate(-50%,-50%) scale(1.08)}
+.net[data-h="0"] .gl[data-i="0"],.net[data-h="1"] .gl[data-i="1"],.net[data-h="2"] .gl[data-i="2"],.net[data-h="3"] .gl[data-i="3"],.net[data-h="4"] .gl[data-i="4"],.net[data-h="5"] .gl[data-i="5"],.net[data-h="6"] .gl[data-i="6"]{stroke:#FFD2B0;stroke-width:2.4}
+.chain{aspect-ratio:520/200;width:100%}
+.lk{fill:none;stroke:rgba(245,240,232,.78);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.half{stroke:var(--acc-l);transform-box:fill-box;transform-origin:center;transition:transform 1.1s var(--spring) .6s}
+.chain.in .half.a{transform:translate(-13px,3px) rotate(-7deg)}
+.chain.in .half.b{transform:translate(13px,-3px) rotate(7deg)}
+.chain.in .mid{animation:midf 6s ease-in-out 2s infinite alternate}
+@keyframes midf{to{transform:translateY(-4px)}}
+.spark path{fill:none;stroke:#FFD2B0;stroke-width:2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+.chain.in .spark path{animation:spk .7s ease-out .95s forwards}
+@keyframes spk{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.fly{fill:var(--acc-l);filter:drop-shadow(0 0 8px rgba(242,134,74,.9));transform-box:fill-box;transform-origin:center;transform:scale(0)}
+.chain.in .fly{animation:fly 1.6s var(--ease) 1s forwards,flt 4s ease-in-out 2.6s infinite alternate}
+@keyframes fly{0%{transform:scale(0)}30%{transform:scale(1.2)}100%{transform:translateY(-92px) scale(1)}}
+@keyframes flt{from{transform:translateY(-92px)}to{transform:translateY(-100px) scale(1.1)}}
+.ch-w{position:absolute;inset:0}
+.ch-w li{position:absolute;top:50%;transform:translate(-50%,-50%);font:300 italic clamp(17px,1.5vw,21px)/1 var(--fd);color:rgba(245,240,232,.9);white-space:nowrap}
+.ch-w li:nth-child(1){left:24.4%}.ch-w li:nth-child(3){left:75.6%}
+.ch-w li:nth-child(2){left:50%;top:auto;bottom:-14%;transform:translate(-50%,0);color:var(--acc-l);font-size:clamp(20px,1.9vw,26px)}
+.js .ch-w li{opacity:0}
+.js .chain.in .ch-w li{opacity:1;transition:opacity .8s}
+.chain.in .ch-w li:nth-child(2){transition-delay:.9s}.chain.in .ch-w li:nth-child(3){transition-delay:1.3s}
+.chain{margin-bottom:56px}
 
 /* ===== CV ===== */
 .cv{padding:150px 0 130px}
@@ -566,8 +602,10 @@ html:not(.js) .ms-in,html:not(.js) .ms-in>.ph{transform:none}
  .pw-lab{display:none}.pw-ring{inset:8px;border-radius:16px}
  .pw-track{padding-left:44px}
  .stop{min-height:0;padding:30px 128px 40px 0}
- .sp-ph{position:relative;top:0}
- .posters{height:min(92vw,560px);margin-top:20px}
+ .sp-g{grid-template-areas:"hd" "gx" "t"}
+ .sp-gx{position:relative;top:0;margin:4px 0 40px}
+ .gp{font-size:12.5px;padding:6px 11px;white-space:normal;text-align:center;max-width:150px}
+ .grp{font-size:10px;letter-spacing:.14em}
  .fq-side{position:relative;top:0}
  .rv-head{flex-direction:column;align-items:flex-start}
  .ct-g{grid-template-columns:1fr}
@@ -613,9 +651,9 @@ html:not(.js) .ms-in,html:not(.js) .ms-in>.ph{transform:none}
 /* ===== reduced motion ===== */
 @media (prefers-reduced-motion:reduce){
  *,*::before,*::after{animation:none!important;transition:none!important}
- .js .hero *,.js .st,.js .ab-ph,.js .ab-p p,.js .facts li,.js .sv-l li,.js .tags li,.js .sp-p p,.js .poster,.js .edu-l li,.js .get li,.js .rv,.js .ct,.wd,.lc-c,.js .tl-i{opacity:1!important;transform:none!important}
+ .js .hero *,.js .st,.js .ab-ph,.js .ab-p p,.js .facts li,.js .sv-l li,.js .sp-p p,.js .gp,.js .ch-w li,.js .edu-l li,.js .get li,.js .rv,.js .ct,.wd,.lc-c,.js .tl-i{opacity:1!important;transform:none!important}
  .ms-in,.ms-in>.ph{transform:none!important}.intro{display:none!important}.cdot{display:none}
- .pf path{opacity:1;transform:none}.sp-p .lw2{opacity:1}.arcs path{stroke-dashoffset:0}.stop{opacity:1;transform:none}
+ .pf path{opacity:1;transform:none}.gl,.crack path{stroke-dashoffset:0}.gd{transform:none}.sp-p .lw2{opacity:1}.arcs path{stroke-dashoffset:0}.stop{opacity:1;transform:none}
  .tl-line{transform:none}.tl-d{transform:none}
 }
 </style>
@@ -712,12 +750,23 @@ html:not(.js) .ms-in,html:not(.js) .ms-in>.ph{transform:none}
 </section>
 <section class="spec on-dark" id="addiction" aria-labelledby="sp-h"><div class="amb amb-rays amb-d" aria-hidden="true"><i class="wa"></i><i class="wb"></i><i class="ry" style="--r:-18deg;--d:0s"></i><i class="ry" style="--r:-6deg;--d:-5s"></i><i class="ry" style="--r:8deg;--d:-9s"></i><i class="ry" style="--r:20deg;--d:-13s"></i></div>
  <div class="wrap sp-g">
-  <div class="sp-t"><p class="kick"><i aria-hidden="true"></i><span data-en="Substance &amp; behavioural addictions">Εξαρτήσεις από ουσίες & συμπεριφορές</span></p><h2 class="h2 lc" id="sp-h" data-en="Specialization in Addiction Treatment">Ειδίκευση ως Εξαρτησιολόγος</h2><ul class="tags"><li data-en="Alcohol">Αλκοόλ</li><li data-en="Drugs">Ναρκωτικά</li><li data-en="Medication">Φάρμακα</li><li data-en="Gambling">Τζόγος</li><li data-en="Internet">Διαδίκτυο</li><li data-en="Social media">Μέσα κοινωνικής δικτύωσης</li><li data-en="Compulsive relationships">Εμμονικές σχέσεις</li></ul><div class="sp-p" data-en="&lt;p&gt;The field of Addiction Studies focuses on the prevention, diagnosis, and treatment of addictions — whether related to substances (such as alcohol, drugs, or medication) or behaviors (such as gambling, internet use, social media, or compulsive relationships).&lt;/p&gt;&lt;p&gt;As an addiction specialist, Zoe Andreadaki has advanced training and experience in understanding the psychological, social, and biological mechanisms that contribute to addictive behavior.&lt;/p&gt;&lt;p&gt;Her approach is holistic, recognizing that addiction is &lt;mark&gt;not simply a “bad habit”&lt;/mark&gt; but a complex psychological condition often rooted in inner pain, anxiety, trauma, or emotional emptiness. Through psychotherapy, she helps individuals identify the deeper causes of their behavior, develop self-regulation skills, and rebuild a healthier relationship with themselves and others.&lt;/p&gt;&lt;p&gt;She also emphasizes family support, understanding that addiction affects not only the individual but the entire family system. Through guidance and counseling, she helps family members understand the nature of addiction, manage stress and guilt, and effectively support their loved one’s recovery.&lt;/p&gt;&lt;p&gt;Her work goes beyond detoxification, focusing instead on the person’s overall empowerment — helping them create a life of meaning, purpose, and emotional balance.&lt;/p&gt;&lt;p&gt;With empathy, steadiness, and authenticity, Zoe Andreadaki walks alongside each client on their path toward healing, helping them regain control and freedom in their lives.&lt;/p&gt;"><p>Η ειδικότητα της εξαρτησιολογίας ασχολείται με την πρόληψη, τη διάγνωση και τη θεραπευτική αντιμετώπιση των εξαρτήσεων — είτε αυτές αφορούν ουσίες (όπως το αλκοόλ, τα ναρκωτικά ή τα φάρμακα), είτε συμπεριφορές (όπως ο τζόγος, το διαδίκτυο, τα μέσα κοινωνικής δικτύωσης ή οι εμμονικές σχέσεις). Ως εξαρτησιολόγος, η Ζωή Ανδρεαδάκη διαθέτει εξειδικευμένη εκπαίδευση και εμπειρία στην κατανόηση των μηχανισμών που οδηγούν έναν άνθρωπο στην εξάρτηση, αλλά και των ψυχολογικών, κοινωνικών και βιολογικών παραγόντων που τη συντηρούν.</p><p>Η προσέγγισή της είναι ολιστική και βασίζεται στη βαθιά κατανόηση ότι η εξάρτηση <mark>δεν είναι απλώς μια “κακή συνήθεια”</mark>, αλλά μια πολύπλοκη ψυχολογική κατάσταση που συχνά συνδέεται με εσωτερικό πόνο, άγχος, τραύμα ή συναισθηματικά κενά. Μέσα από την ψυχοθεραπευτική διαδικασία, η κα Ανδρεαδάκη βοηθά το άτομο να αναγνωρίσει τις βαθύτερες αιτίες της συμπεριφοράς του, να αναπτύξει μηχανισμούς αυτορρύθμισης και να ξαναχτίσει τη σχέση του με τον εαυτό του και τους άλλους.</p><p>Παράλληλα, δίνει έμφαση στη στήριξη των οικογενειών, καθώς η εξάρτηση δεν επηρεάζει μόνο το άτομο, αλλά και το ευρύτερο περιβάλλον του. Μέσα από καθοδήγηση και συμβουλευτική, βοηθά τα μέλη της οικογένειας να κατανοήσουν τη φύση της εξάρτησης, να διαχειριστούν το άγχος και την ενοχή και να συμβάλουν αποτελεσματικά στην πορεία ανάρρωσης του αγαπημένου τους προσώπου.</p><p>Η δουλειά της ως εξαρτησιολόγος δεν περιορίζεται στην “απεξάρτηση”, αλλά στοχεύει στη συνολική ενδυνάμωση του ατόμου — στη δημιουργία μιας νέας ζωής με νόημα, στόχο και εσωτερική ισορροπία. Η Ζωή Ανδρεαδάκη συνοδεύει τον θεραπευόμενο με ενσυναίσθηση, σταθερότητα και ειλικρίνεια σε κάθε στάδιο αυτής της διαδρομής, βοηθώντας τον να ξαναβρεί τον έλεγχο και την ελευθερία του.</p></div>
+  <div class="sp-hd"><p class="kick"><i aria-hidden="true"></i><span data-en="Substance &amp; behavioural addictions">Εξαρτήσεις από ουσίες & συμπεριφορές</span></p><h2 class="h2 lc" id="sp-h" data-en="Specialization in Addiction Treatment">Ειδίκευση ως Εξαρτησιολόγος</h2></div>
+  <div class="sp-gx"><figure class="sgx net" aria-label="Εξαρτήσεις από ουσίες και συμπεριφορές" data-en-aria="Substance and behavioural addictions">
+ <svg class="net-s" viewBox="0 0 520 472" aria-hidden="true"><defs><radialGradient id="core"><stop offset="0" stop-color="#F7A46E" stop-opacity=".75"/><stop offset=".4" stop-color="#F2864A" stop-opacity=".28"/><stop offset="1" stop-color="#F2864A" stop-opacity="0"/></radialGradient></defs>
+  <ellipse class="orb1" cx="260" cy="236" rx="158" ry="178"/><ellipse class="orb2" cx="260" cy="236" rx="87" ry="98"/>
+  <g class="links"><path class="gl" data-i="0" d="M260 236 Q220.1 315.0 139.0 350.4" pathLength="1" style="--i:0"/><path class="gl" data-i="1" d="M260 236 Q181.0 207.6 102.0 236.0" pathLength="1" style="--i:1"/><path class="gl" data-i="2" d="M260 236 Q178.9 200.6 139.0 121.6" pathLength="1" style="--i:2"/><path class="gl" data-i="3" d="M260 236 Q325.4 170.8 334.2 78.8" pathLength="1" style="--i:3"/><path class="gl" data-i="4" d="M260 236 Q321.2 176.3 406.5 169.3" pathLength="1" style="--i:4"/><path class="gl" data-i="5" d="M260 236 Q321.2 295.7 406.5 302.7" pathLength="1" style="--i:5"/><path class="gl" data-i="6" d="M260 236 Q325.4 301.2 334.2 393.2" pathLength="1" style="--i:6"/></g><circle class="glow" cx="260" cy="236" r="96" fill="url(#core)"/><g class="crack"><path d="M260 236 L264.5 210.4 L274.9 184.1" pathLength="1" style="--k:0"/><path d="M260 236 L286.0 221.0 L310.8 200.4" pathLength="1" style="--k:1"/><path d="M260 236 L283.2 242.2 L306.4 254.7" pathLength="1" style="--k:2"/><path d="M260 236 L271.8 261.4 L289.9 285.7" pathLength="1" style="--k:3"/><path d="M260 236 L251.1 260.4 L238.0 283.1" pathLength="1" style="--k:4"/><path d="M260 236 L231.8 246.3 L206.5 263.2" pathLength="1" style="--k:5"/><path d="M260 236 L238.2 225.9 L218.9 211.3" pathLength="1" style="--k:6"/><path d="M260 236 L250.4 209.7 L237.2 184.8" pathLength="1" style="--k:7"/></g><circle class="gd" cx="139.0" cy="350.4" r="4.5" style="--i:0"/><circle class="gd" cx="102.0" cy="236.0" r="4.5" style="--i:1"/><circle class="gd" cx="139.0" cy="121.6" r="4.5" style="--i:2"/><circle class="gd" cx="334.2" cy="78.8" r="4.5" style="--i:3"/><circle class="gd" cx="406.5" cy="169.3" r="4.5" style="--i:4"/><circle class="gd" cx="406.5" cy="302.7" r="4.5" style="--i:5"/><circle class="gd" cx="334.2" cy="393.2" r="4.5" style="--i:6"/></svg>
+ <p class="core"><span data-en="Addiction">Εξάρτηση</span></p>
+ <p class="grp g1" data-en="Substances">Ουσίες</p><p class="grp g2" data-en="Behaviours">Συμπεριφορές</p>
+ <ul class="pills"><li class="gp su" data-i="0" style="--x:26.72%;--y:74.24%;--i:0"><span data-en="Alcohol">Αλκοόλ</span></li><li class="gp su" data-i="1" style="--x:19.62%;--y:50.00%;--i:1"><span data-en="Drugs">Ναρκωτικά</span></li><li class="gp su" data-i="2" style="--x:26.72%;--y:25.76%;--i:2"><span data-en="Medication">Φάρμακα</span></li><li class="gp beh" data-i="3" style="--x:64.26%;--y:16.70%;--i:3"><span data-en="Gambling">Τζόγος</span></li><li class="gp beh" data-i="4" style="--x:78.17%;--y:35.87%;--i:4"><span data-en="Internet">Διαδίκτυο</span></li><li class="gp beh" data-i="5" style="--x:78.17%;--y:64.13%;--i:5"><span data-en="Social media">Μέσα κοινωνικής δικτύωσης</span></li><li class="gp beh" data-i="6" style="--x:64.26%;--y:83.30%;--i:6"><span data-en="Compulsive relationships">Εμμονικές σχέσεις</span></li></ul></figure><figure class="sgx chain" aria-label="Heal · Break free · Live">
+ <svg class="ch-s" viewBox="0 0 520 200" aria-hidden="true">
+  <path class="lk l1" d="M68 62 H186 A38 38 0 0 1 186 138 H68 A38 38 0 0 1 68 62Z"/>
+  <g class="mid"><path class="lk half a" d="M252 74 H232 A26 26 0 0 0 232 126 H252"/><path class="lk half b" d="M268 74 H288 A26 26 0 0 1 288 126 H268"/></g>
+  <path class="lk l3" d="M334 62 H452 A38 38 0 0 1 452 138 H334 A38 38 0 0 1 334 62Z"/>
+  <g class="spark"><path d="M260 100 l0 -30" pathLength="1"/><path d="M260 100 l22 -20" pathLength="1"/><path d="M260 100 l-22 -20" pathLength="1"/><path d="M260 100 l26 6" pathLength="1"/><path d="M260 100 l-26 6" pathLength="1"/><path d="M260 100 l14 26" pathLength="1"/><path d="M260 100 l-14 26" pathLength="1"/></g>
+  <circle class="fly" cx="260" cy="100" r="9"/></svg>
+ <ol class="ch-w"><li data-en="Heal">Θεραπεία</li><li class="m" data-en="Break free">Απελευθέρωση</li><li data-en="Live">Ζωή</li></ol></figure></div>
+  <div class="sp-t"><div class="sp-p" data-en="&lt;p&gt;The field of Addiction Studies focuses on the prevention, diagnosis, and treatment of addictions — whether related to substances (such as alcohol, drugs, or medication) or behaviors (such as gambling, internet use, social media, or compulsive relationships).&lt;/p&gt;&lt;p&gt;As an addiction specialist, Zoe Andreadaki has advanced training and experience in understanding the psychological, social, and biological mechanisms that contribute to addictive behavior.&lt;/p&gt;&lt;p&gt;Her approach is holistic, recognizing that addiction is &lt;mark&gt;not simply a “bad habit”&lt;/mark&gt; but a complex psychological condition often rooted in inner pain, anxiety, trauma, or emotional emptiness. Through psychotherapy, she helps individuals identify the deeper causes of their behavior, develop self-regulation skills, and rebuild a healthier relationship with themselves and others.&lt;/p&gt;&lt;p&gt;She also emphasizes family support, understanding that addiction affects not only the individual but the entire family system. Through guidance and counseling, she helps family members understand the nature of addiction, manage stress and guilt, and effectively support their loved one’s recovery.&lt;/p&gt;&lt;p&gt;Her work goes beyond detoxification, focusing instead on the person’s overall empowerment — helping them create a life of meaning, purpose, and emotional balance.&lt;/p&gt;&lt;p&gt;With empathy, steadiness, and authenticity, Zoe Andreadaki walks alongside each client on their path toward healing, helping them regain control and freedom in their lives.&lt;/p&gt;"><p>Η ειδικότητα της εξαρτησιολογίας ασχολείται με την πρόληψη, τη διάγνωση και τη θεραπευτική αντιμετώπιση των εξαρτήσεων — είτε αυτές αφορούν ουσίες (όπως το αλκοόλ, τα ναρκωτικά ή τα φάρμακα), είτε συμπεριφορές (όπως ο τζόγος, το διαδίκτυο, τα μέσα κοινωνικής δικτύωσης ή οι εμμονικές σχέσεις). Ως εξαρτησιολόγος, η Ζωή Ανδρεαδάκη διαθέτει εξειδικευμένη εκπαίδευση και εμπειρία στην κατανόηση των μηχανισμών που οδηγούν έναν άνθρωπο στην εξάρτηση, αλλά και των ψυχολογικών, κοινωνικών και βιολογικών παραγόντων που τη συντηρούν.</p><p>Η προσέγγισή της είναι ολιστική και βασίζεται στη βαθιά κατανόηση ότι η εξάρτηση <mark>δεν είναι απλώς μια “κακή συνήθεια”</mark>, αλλά μια πολύπλοκη ψυχολογική κατάσταση που συχνά συνδέεται με εσωτερικό πόνο, άγχος, τραύμα ή συναισθηματικά κενά. Μέσα από την ψυχοθεραπευτική διαδικασία, η κα Ανδρεαδάκη βοηθά το άτομο να αναγνωρίσει τις βαθύτερες αιτίες της συμπεριφοράς του, να αναπτύξει μηχανισμούς αυτορρύθμισης και να ξαναχτίσει τη σχέση του με τον εαυτό του και τους άλλους.</p><p>Παράλληλα, δίνει έμφαση στη στήριξη των οικογενειών, καθώς η εξάρτηση δεν επηρεάζει μόνο το άτομο, αλλά και το ευρύτερο περιβάλλον του. Μέσα από καθοδήγηση και συμβουλευτική, βοηθά τα μέλη της οικογένειας να κατανοήσουν τη φύση της εξάρτησης, να διαχειριστούν το άγχος και την ενοχή και να συμβάλουν αποτελεσματικά στην πορεία ανάρρωσης του αγαπημένου τους προσώπου.</p><p>Η δουλειά της ως εξαρτησιολόγος δεν περιορίζεται στην “απεξάρτηση”, αλλά στοχεύει στη συνολική ενδυνάμωση του ατόμου — στη δημιουργία μιας νέας ζωής με νόημα, στόχο και εσωτερική ισορροπία. Η Ζωή Ανδρεαδάκη συνοδεύει τον θεραπευόμενο με ενσυναίσθηση, σταθερότητα και ειλικρίνεια σε κάθε στάδιο αυτής της διαδρομής, βοηθώντας τον να ξαναβρεί τον έλεγχο και την ελευθερία του.</p></div>
    <a class="btn light mag" href="#contact"><span data-en="Book Your Appointment Today">Κλείστε Ραντεβού Τώρα</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-  <div class="sp-ph"><div class="posters">
-   <button class="poster p1 lb" type="button" aria-label="Μεγέθυνση" data-en-aria="Enlarge"><img src="assets/img/zoi-andreadaki-psychologos-alimos-heal-break-free-live-700.webp" width="700" height="700" loading="lazy" decoding="async" alt="Heal · Break free · Live — Ζωή πέρα από τις εξαρτήσεις" data-en-alt="Heal · Break free · Live — life beyond addictions"></button>
-   <button class="poster p2 lb" type="button" aria-label="Μεγέθυνση" data-en-aria="Enlarge"><img src="assets/img/zoi-andreadaki-psychologos-alimos-exartiseis-700.webp" width="700" height="700" loading="lazy" decoding="async" alt="Addiction — θεραπεία εξαρτήσεων στον Άλιμο" data-en-alt="Addiction — addiction treatment in Alimos"></button>
-  </div></div>
  </div>
 </section>
 <section class="cv" id="cv" aria-labelledby="cv-h"><div class="amb amb-lines amb-l" aria-hidden="true"><i class="wa"></i><i class="wb"></i><svg class="hl" viewBox="0 0 1440 400" preserveAspectRatio="none"><path d="M-20 60 C 360 20, 1080 100, 1460 50" style="--d:24s"/><path d="M-20 130 C 360 90, 1080 170, 1460 120" style="--d:28s"/><path d="M-20 200 C 360 160, 1080 240, 1460 190" style="--d:32s"/><path d="M-20 270 C 360 230, 1080 310, 1460 260" style="--d:36s"/><path d="M-20 340 C 360 300, 1080 380, 1460 330" style="--d:40s"/></svg></div>
@@ -839,7 +888,7 @@ if(saved==='en')setLang('en',true);
 prep();
 
 /* ---------- reveal ---------- */
-var REV='.sec-head,.st,.ab-ph,.ab-t,.sv-l,.tags,.sp-p p,.sp-p mark,.posters,.edu,.get,.ms,.map,.rv-g,.ct-g,.lc,.kick';
+var REV='.sec-head,.st,.ab-ph,.ab-t,.sv-l,.sp-p p,.sp-p mark,.net,.chain,.edu,.get,.ms,.map,.rv-g,.ct-g,.lc,.kick';
 function showAll(){$$(REV).forEach(function(x){x.classList.add('in')});$$('.cnt').forEach(function(c){c.textContent=c.dataset.to});lightAll()}
 function lightAll(){lightWords.forEach(function(w){w.classList.add('lit')})}
 var io=null;
@@ -931,6 +980,9 @@ if(HOVER&&!RM){
     c.addEventListener('pointermove',function(e){if(!r)return;var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(900px) rotateX('+(-py*5)+'deg) rotateY('+(px*6)+'deg) translateY(-6px)'});
     c.addEventListener('pointerleave',function(){c.style.transform=''})});
 }
+/* addiction graph: a word lights its line */
+var net=$('.net');if(net)$$('.gp',net).forEach(function(p){function on(v){net.dataset.h=v?p.dataset.i:'';p.classList.toggle('on',v)}
+  p.addEventListener('pointerenter',function(){on(true)});p.addEventListener('pointerleave',function(){on(false)})});
 /* FAQ: one open at a time */
 $$('.qa').forEach(function(d){d.addEventListener('toggle',function(){if(d.open)$$('.qa').forEach(function(o){if(o!==d)o.open=false})})});
 de.classList.add('ready');
